@@ -1,0 +1,106 @@
+#section{
+    width: 1000px;
+    margin: 10px auto;
+    overflow: hidden;
+}
+input,textarea{
+    outline:medium;
+}
+#loc{
+    padding: 5px;
+}
+#upload{
+    overflow: hidden;
+}
+#upload-title{
+    padding: 5px;
+    text-align: center;
+}
+.upload-title{
+    display: block;
+    width: 420px;
+    margin: 5px auto;
+    font-size: 20px;
+    border: 1px solid #F3AC20;
+    border-radius: 5px;
+    padding: 10px;
+    color: #E6E6E6;
+}
+#upload-info{
+    width: 1000px;
+    margin: 10px auto;
+    text-align: center;
+}
+#upload-img{
+    width: 600px;
+    margin: 10px auto;
+}
+#upload-img:before{
+    content: "";
+    display: block;
+    clear: both;
+}
+#upload-img:after{
+    content: "";
+    display: block;
+    clear: both;
+}
+#upload-area{
+    margin-top: 0;
+    padding: 1px;
+}
+#pics{
+    width: 500px;
+    padding: 0;
+    margin: 40px auto 120px;
+    text-align: center;
+    color:#E6E6E6;
+}
+#pics h1{
+    font-weight: normal;
+    font-size: 32px;
+    display: block;
+    margin-top: 80px;
+    cursor: pointer;
+}
+#pic{
+    display: none;
+    width: 100%;
+    padding: 0;
+    margin-top: 50px;
+}
+#pic img {
+    width: 100%;
+    margin-bottom: 16px;
+    border: 1px solid #eee;
+    box-shadow: 0 5px 10px 0 rgba(0,0,0,0.1);
+}
+#story{
+    border:1px solid #F3AC20;
+    border-radius: 5px;
+    padding: 10px;
+    min-height: 300px;
+    font-size: 16px;
+    color: #E6E6E6;
+}
+#upload-btn{
+    padding: 10px;
+    float: right;
+}
+#upload-btn:before{
+    content: "";
+    display: block;
+    clear: both;
+}
+#upload-btn:after{
+    content: "";
+    display: block;
+    clear: both;
+}
+#upload-btn a{
+    padding: 8px 18px;
+    background-color: #6B3908;
+    color: white;
+    border-radius: 5px;
+    margin-right: 10px;
+}

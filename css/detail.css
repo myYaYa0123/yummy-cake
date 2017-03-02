@@ -1,0 +1,142 @@
+#section{
+    width: 1000px;
+    margin: 10px auto;
+    overflow: hidden;
+}
+#loc{
+    padding: 5px;
+}
+/*图片部分*/
+#product-title:after{
+    content: "";
+    display: block;
+    clear: both;
+}
+#product-title-lf{
+    float: left;
+    width:470px;
+    margin:0 10px;
+}
+#product-title-lf img{
+    width: 400px;
+    height: 400px;
+    margin: 0 30px;
+}
+#product-title-rt{
+    float: left;
+    width: 500px;
+    margin-right: 10px;
+    margin-top: 30px ;
+}
+.rt-title{
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px 0;
+    border-bottom: 1px solid #F4EFEA;
+}
+.rt-price{
+    padding: 10px 0;
+    margin: 15px 0;
+}
+.rt-size a{
+    padding: 10px;
+    margin-right: 10px;
+    border: 1px solid #F4EFEA;
+    color: #603723;
+}
+.rt-size a:hover{
+    color: #6B3908;
+    border: 1px solid #6B3908;
+}
+.rt-sum{
+    margin: 28px 0 15px ;
+}
+.rt-sum a{
+    display: inline-block;
+    font-weight: bold;
+    width: 22px;
+    height: 22px;
+    line-height: 22px;
+    text-align: center;
+    border: 1px solid #F4EFEA;
+}
+.rt-sum input{
+    display: inline-block;
+    margin: 0 8px ;
+    width: 30px;
+    height: 21px;
+    text-align: center;
+    border: 1px solid #F4EFEA;
+}
+.rt-buy a:hover{
+    opacity: 0.7;
+}
+.rt-info{
+    margin: 15px auto;
+    padding: 10px 0;
+    border-top: 1px solid #F4EFEA;
+}
+/*商品详情*/
+#product-info{
+    margin:10px auto;
+    padding: 10px;
+    background-color: #F8F8F8;
+}
+#product-info .title{
+    margin: 10px 0 0 20px ;
+    padding-left:10px;
+    font-size: 16px;
+    height: 22px;
+    line-height: 22px;
+    border-left: 3px solid #6B3908;
+}
+.proinfo{
+    padding: 10px 30px ;
+}
+.proinfo ul li{
+    display: inline-block;
+    width: 292px;
+    padding: 5px;
+}
+.material{
+    margin-top: 20px;
+    padding: 20px 0 0 ;
+    border-top: 1px solid #F4EFEA;
+}
+.material p{
+    margin: 5px 0;
+}
+.size-rule li{
+    padding: 3px 0;
+}
+.rule{
+    margin: 5px 0 10px 0;
+}
+.rule li p{
+    display: inline-block;
+    width: 150px;
+    height: 24px;
+    line-height: 24px;
+    margin-left: 5px ;
+}
+.rule li p:first-child{
+    width: 60px;
+    text-align: right;
+}
+.notice{
+    padding: 25px ;
+    border-bottom: 1px solid #F4EFEA;
+    margin-bottom: 10px;
+}
+.bg-img img:first-child{
+    margin-bottom: 10px;
+    border-bottom: 1px solid #F4EFEA;
+}
+.bg-img{
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #F4EFEA;
+}
+.rt-size a.active{
+    border: 1px solid #6B3908;
+}

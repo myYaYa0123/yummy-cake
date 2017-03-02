@@ -1,0 +1,184 @@
+﻿/*选择城市*/
+#city-box>div h3{
+    font-weight: normal;
+    height: 32px;
+    line-height: 32px;
+}
+#city-box>div>div.citybox-top>div{
+    border-bottom: 1px solid #fff;
+    text-align: center;
+    height: 110px;
+}
+#city-box>div>div.citybox-top>div h1{
+    font-weight: normal;
+    font-family: "仿宋";
+}
+#city-box>div>div.citybox-top>div span{
+    color: #FFA300;
+    display: block;
+    padding-top: 10px;
+    height:30px;
+    line-height: 30px;
+}
+#city-box>div>div.citybox-mid{
+    padding: 10px;
+    margin: auto;
+    width: 240px;
+    height: 50px;
+}
+#city-box>div>div.citybox-mid p{
+    font-size: 16px;
+}
+#city-box>div>div.citybox-mid ul>li.city{
+    padding: 5px 10px;
+    background:#fff;
+    color: #603723;
+    border-radius: 2px;
+    position: relative;
+}
+li.city1{
+    position: relative;
+}
+.city-list{
+    padding: 5px 20px;
+    width: 100px;
+    color: #603723;
+    position: absolute;
+    top:29px;
+    left: 0;
+    background: #fff;
+    display: none;
+    z-index: 1200;
+}
+.city-list a{
+    display: inline-block;
+    padding: 0 5px;
+    cursor: pointer;
+}
+.citybox-bot{
+    text-align: center;
+    margin-bottom: 10px;
+}
+.citybox-bot a{
+    padding: 10px 50px;
+    border-radius: 2px;
+    color: #603723;
+    background: #fff;
+}
+/*滚动图片盒子*/
+#banner{
+    width: 100%;
+    margin: 0;
+}
+#slider {
+    width: 990px;
+    height:309px;
+    position:relative;
+    margin:10px auto 0;
+
+}
+#slider #sImg {
+    position:absolute;
+    top: 0;  left: 0;
+    height:309px;
+}
+#slider #sImg li{
+    float:left;
+    z-index:0;
+}
+/*图片上的左右箭头*/
+#slider .direction{
+    height: 309px;
+    margin-top:-40px;
+    width: 40px;
+    display: none;
+    cursor: pointer;
+    opacity: 0.5;
+}
+#slider .direction.lf{
+    background: url("../images/lf.png") no-repeat 0 0;
+}
+#slider .direction.lf:hover,#slider .direction.rt:hover{
+    opacity: 0.9;
+}
+#slider .direction.rt{
+    background: url("../images/rt.png") no-repeat 0 0;
+}
+#slider:hover .direction{
+    display: block;
+}
+/*图片上的位置点*/
+#slider #index {
+    position:absolute;
+    bottom:15px;
+    right:435px;
+    z-index: 2;
+}
+#slider #index li {
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    display: inline-block;
+    background: #E6E6E6;
+    color: #fff;
+    border-radius: 50%;
+    text-align: center;
+    cursor: pointer;
+    margin-left:10px;
+}
+#slider #index li:hover,#slider #indes li.hover {
+    background:#ccc;
+}
+/*section部分*/
+#seaction{
+    width: 100%;
+}
+/*标题*/
+#seaction div.title{
+    width: 990px;
+    margin: auto;
+    margin-bottom: 10px;
+}
+#seaction div.title p{
+    text-align: center;
+    height: 30px;
+    line-height: 30px;
+    border-bottom: 1px dashed #E6E6E6;
+}
+/*时刻分享*/
+.T-classfy{
+    width: 990px;
+    margin: auto;
+    position: relative;
+    margin-top: 10px;
+    overflow: hidden;
+}
+.T-classfy li{
+    width: 320px;
+    height: 200px;
+    margin-right:10px;
+    margin-bottom: 10px;
+    float: left;
+}
+.T-classfy li dd.L{
+    float: left;
+}
+.T-classfy li dt{
+    position:absolute;
+    z-index: 4;
+}
+.T-classfy li.Tclassfy-lf dt{
+    top:0;
+    left:-650px;
+}
+.T-classfy li.Tclassfy-rt dt{
+    top:0;
+    right:-650px;
+}
+.T-classfy li.Tclassfy-top dt{
+    top:-650px;
+}
+.T-classfy li.Tclassfy-bot dt{
+    bottom:-650px;
+}
+/*热门推荐*/

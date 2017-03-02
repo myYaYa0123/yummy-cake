@@ -1,0 +1,148 @@
+#section{
+    width: 1045px;
+    margin: 0 auto;
+}
+#nav{
+    width: 1025px;
+    padding: 10px;
+    margin: 10px 0;
+    background-color: #F9F6F1;
+}
+#nav dl{
+    overflow: hidden;
+    height: 30px;
+    line-height: 30px;
+}
+#nav dl dt,#nav dl dd{
+    float: left;
+}
+#nav dl dt{
+    width: 100px;
+    text-align: right;
+}
+#nav dl dd{
+    padding: 0 10px;
+    height: 30px;
+    line-height: 30px;
+}
+#nav dl dd a{
+    padding: 3px  10px;
+}
+#nav dl dd a:hover{
+    color: white;
+    background-color: #603723;
+    border-radius: 5px;
+}
+#nav dl dd a.active{
+    background-color: #603723;
+    color: white;
+    border-radius: 5px;
+}
+/**/
+#sort{
+    margin-top: 10px;
+}
+.good-box{
+    display: inline-block;
+    position: relative;
+    width: 250px;
+    margin:3px;
+    background: #fff;
+    border: 1px solid #F4EFEA;
+    box-shadow: 3px 3px 8px #eee ;
+    -o-box-shadow: 3px 3px 8px #eee ;
+    -webkit-box-shadow: 3px 3px 8px #eee ;
+    -moz-box-shadow: 3px 3px 8px #eee ;
+}
+
+.good-box>.good-box-top{
+    position: relative;
+    width: 250px;
+    height: 250px;
+    overflow: hidden;
+}
+.good-box-top>img{
+    cursor: pointer;
+}
+.good-box>.good-box-top>.mask{
+    position: absolute;
+    width: 250px;
+    height: 50px;
+    line-height:50px;
+    color: white;
+    background: rgba(0,0,0,0.5);
+    bottom: -50px;
+}
+/*遮罩层*/
+.mask>div{
+    display: inline-block;
+}
+.sugar-title{
+    width: 90px;
+    text-align: right;
+}
+.suger-index{
+    width: 70px;
+    font-size: 18px;
+    text-align: left;
+}
+.sugar-icon{
+    width: 60px;
+    text-align: center;
+    position: relative;
+}
+.sugar-icon img{
+    cursor: pointer;
+    position: absolute;
+    top:-24px;
+    border-radius: 5px;
+}
+@keyframes up {
+     0%{bottom: -50px}
+     100%{bottom: 0}
+ }
+@-webkit-keyframes up {
+    0%{bottom: -50px}
+    100%{bottom: 0}
+}
+@-o-keyframes up {
+    0%{bottom: -50px}
+    100%{bottom: 0}
+}
+@-moz-keyframes up {
+    0%{bottom: -50px}
+    100%{bottom: 0}
+}
+.show{
+    -webkit-animation-name: up;
+    -webkit-animation-duration: .6s;
+    -webkit-animation-fill-mode: forwards;
+}
+@keyframes down {
+    0%{bottom:0}
+    100%{bottom:  -50px}
+}
+@-webkit-keyframes down {
+    0%{bottom:0}
+    100%{bottom:  -50px}
+}
+@-o-keyframes down {
+    0%{bottom:0}
+    100%{bottom:  -50px}
+}
+@-moz-keyframes down {
+    0%{bottom: 0}
+    100%{bottom: -50px}
+}
+.hide1{
+    -webkit-animation-name: down;
+    -webkit-animation-duration: .6s;
+    -webkit-animation-fill-mode: forwards;
+}
+/*详情*/
+.good-introduce{
+    position: relative;
+    width: 250px;
+    margin: 10px 0;
+    text-align: center;
+}
