@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>将你的故事分享</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/upload.css">
+</head>
+<body>
+<a name="top1"></a>
+<header id="header"></header>
+<section id="section">
+    <div id="loc">
+        <a href="happiness.html">述说幸福</a>
+        >
+        上传故事
+    </div>
+    <div id="upload">
+        <div id="upload-title">
+            <input type="text" class="upload-title" name="storyTitle" value="给你的故事取个名字吧">
+        </div>
+        <div id="upload-img">
+            <div id="upload-area">
+                <div id="pics">
+                    <h1>拖动图片到此处上传</h1>
+                    <div id="pic">
+                        <img src="#" >
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="upload-info">
+            <textarea name="info" id="story" cols="50" >述说你的故事：</textarea>
+        </div>
+        <div id="upload-btn">
+            <a href="#" id="save">保存</a>
+            <a href="#" id="clear">清除</a>
+        </div>
+    </div>
+</section>
+<footer id="footer"></footer>
+<script src="js/jquery.js"></script>
+<script src="js/common.js"></script>
+<script>
+    //加载头部和底部
+       init();
+    //文本框效果
+    $(function(){
+        $('.upload-title').focus(function () {
+            this.value="";
+            $(this).css('color','#6B3908').css('border','2px solid #F3AC20');
+        });
+        $('.upload-title').blur(function () {
+            if(this.value==""){
+                this.value="给你的故事取个名字吧";
+                $(this).css('color',' #E6E6E6');
+            }
+            else{
+                $(this).css('text-align','center');
+            }
+            $(this).css('border','1px solid #F3AC20');
+        });
+        $('#story').focus(function () {
+            this.value="";
+            console.log(this);
+            $(this).css('color','#6B3908').css('border','2px solid #F3AC20');
+        });
+        $('#story').blur(function () {
+            $(this).css('border','1px solid #F3AC20');
+        });
+        //点击清除
+        $('#clear').click(function (e) {
+            e.preventDefault();
+            $('.upload-title').val("给你的故事取个名字吧").css('color',' #E6E6E6').css('text-align','left');
+            $('#story').val("述说你的故事：").css('color',' #E6E6E6');
+        })
+    });
+    //图片上传
+    $(function(){
+        var file;
+        //阻止浏览器自动显示图片
+        document.ondragover=function (e) {
+            e.preventDefault();
+        }
+        document.ondrop=function (e) {
+            e.preventDefault();
+        }
+        var target=document.getElementById('upload-area');
+        // 当上传图片离开目标元素时,恢复目标元素背景颜色
+        target.ondragleave=function () {
+            target.style.backgroundColor = "#fff";
+            $("#pics h1").text("拖动图片到此处上传");
+        }
+        // 当上传图片到达目标元素时,修改目标元素背景颜色
+        target.ondragover = function(event){
+            event.preventDefault();
+            target.style.backgroundColor = "#E8E8E8";
+            $("#pics h1").text("松开鼠标即开始上传");
+        }
+        target.ondrop=function (e) {
+            file= e.dataTransfer.files[0];// 通过 dataTransfer 对象获取源元素数据
+            uploadFile();
+        }
+        function uploadFile(){
+            var fd=new FormData();////将文件转码
+            fd.append('userfile',file);
+            $.ajax({
+                url:'php/upload.php',
+                type:'POST',
+                data:fd,
+                processData:false,
+                contentType:false,
+                success:function(returnData){
+                    console.log(returnData);
+                    target.style.backgroundColor = "#fff";
+                    $('#pics h1').css('display','none');
+                    $("#pic img").attr("src",returnData);
+                    $("#pic").show();
+                }
+            })
+        }
+    });
+</script>
+
+</body>
+</html>

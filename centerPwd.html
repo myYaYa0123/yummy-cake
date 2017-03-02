@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>YummyCake定制属于您的专属蛋糕</title>
+    <link rel="stylesheet" type="text/css" href="css/common.css">
+    <link rel="stylesheet" type="text/css" href="css/center.css">
+    <style>
+        ul.pwd li{
+            margin: 20px 0;
+        }
+        ul.pwd li :first-child{
+            display: inline-block;
+            width: 100px;
+            text-align: right;
+        }
+        input{
+            width: 200px;
+            height: 24px;
+            text-align: center;
+            border: 1px solid #eeeeee;
+            background-color:#F9F6F1 ;
+            border-radius: 2px;
+        }
+        li.last-btn a{
+            display: inline-block;
+            padding: 8px 60px;
+            margin-right:10px;
+            border-radius: 5px;
+            background-color: #b0916a;
+            color: #ffffff;
+        }
+        li.last-btn a:hover{
+            background-color: #603723;
+        }
+    </style>
+</head>
+<body>
+
+<header id="header"></header>
+<section id="section">
+    <div id="loc">
+        <a href="index.html">首页</a>
+        > <a href="center.html">个人中心</a>
+        >密码维护
+    </div>
+    <div class="over">
+        <div class="personal-lf lf">
+            <ul>
+                <li class="personal-title ">
+                    个人中心
+                </li>
+                <li ><a href="centerPerson.html" >个人资料</a></li>
+                <li><a href="centerOrder.html" >我的订单</a></li>
+                <li><a href="centerScore.html" >我的积分</a></li>
+                <li><a href="centerVip.html" >会员信息</a></li>
+                <li><a href="centerMoney.html" >我的资金</a></li>
+                <li><a href="centerRecharge.html" >在线充值</a></li>
+                <li><a href="centerVoucher.html" >代金券</a></li>
+                <li><a href="centerLocation.html" >收货地址</a></li>
+                <li><a href="centerDate.html" >我的纪念日</a></li>
+                <li><a href="centerPwd.html" class="active1">密码维护</a></li>
+                <li><a href="centerStroy.html" >我的故事</a></li>
+                <li><a href="upload.html" >上传故事</a></li>
+            </ul>
+        </div>
+        <div class="personal-rt lf">
+            <p class="personal-title">密码维护</p>
+            <div class="personal-info">
+                <p><b>提示：</b></p><p>为保障您的密码安全，请尽量以字母（区分大小写）、数字组合的密码，一旦发生密码被盗情况，请您及时与我们联系。</p>
+                <form action="#">
+                    <ul class="pwd">
+                        <li>
+                            <label >用 户 名：</label>
+                            <b>yaya</b>
+                        </li>
+                        <li>
+                            <label >原始密码：</label>
+                            <input type="password" name="" value="">
+                        </li>
+                        <li>
+                            <label >新 密 码：</label>
+                            <input type="password" name="" value="">
+                        </li>
+                        <li>
+                            <label >确认密码：</label>
+                            <input type="password" name="" value="">
+                        </li>
+                        <li class="last-btn">
+                            <label ></label>
+                            <a type="submit" href="#">提交</a>
+                        </li>
+                    </ul>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer id="footer">
+</footer>
+<script src="js/jquery.js"></script>
+<script src="js/common.js"></script>
+<script>
+
+</script>
+</body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Yummy Cake--个人注册</title>
+    <link rel="stylesheet" type="text/css" href="css/common.css">
+</head>
+<body>
+<a name="top1"></a>
+<header id="header"></header>
+
+    <div id="login-box">
+        <div id="state">
+            <div id="close"><a href="#">X</a></div>
+            <div id="main-tab-box">
+                <ul id="main-tab">
+                    <li class="current"><a href="#login">登录</a></li>
+                    <li><a href="#regist">注册</a></li>
+                </ul>
+            </div>
+            <div class="content reg-container" id="login" >
+                <form class="form form-horizontal" action="#">
+                    <div class="form-group">
+                        <label class="col-md-2 control-label" for="username">用户名:</label>
+                        <div class="col-md-5">
+                            <input id="login-username" type="text" class="form-control" autofocus placeholder="请输入用户名" required pattern="^[a-zA-Z0-9]{8,16}$">
+                        </div>
+                        <label id="login-usernameTip" class="col-md-5 hide control-default">请输入8至16位的英文或数字</label>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label" for="password">密码:</label>
+                        <div class="col-md-5">
+                            <input id="login-password" type="password" class="form-control" placeholder="请输入密码" required pattern="^[0-9]{6,12}$">
+                        </div>
+                        <label id="login-passwordTip" class="col-md-5 hide control-default">请输入6至12位的数字</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="checkbox" id="auto">下次自动登录
+                        <a id="question">登录遇到问题</a>
+                    </div>
+                    <div class="form-group ">
+                        <div class="col-md-5 ">
+                            <a  class="btn btn-success btn-block">登录</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="content reg-container" id="regist">
+                <form class="form form-horizontal" action="#">
+                    <div class="form-group">
+                        <label class="col-md-2 control-label" for="username">用户名:</label>
+                        <div class="col-md-5">
+                            <input id="username" type="text" class="form-control" autofocus placeholder="请输入用户名" required pattern="^[a-zA-Z0-9]{8,16}$">
+                        </div>
+                        <label id="usernameTip" class="col-md-5 hide control-default">请输入8至16位的英文或数字</label>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label" for="password">密码:</label>
+                        <div class="col-md-5">
+                            <input id="password" type="password" class="form-control" placeholder="请输入密码" required pattern="^[0-9]{6,12}$">
+                        </div>
+                        <label id="passwordTip" class="col-md-5 hide control-default">请输入6至12位的数字</label>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label" for="birth">出生日期:</label>
+                        <div class="col-md-5">
+                            <input id="birth" type="date" class="form-control" placeholder="请输入出生日期">
+                        </div>
+                        <label id="birthTip" class="col-md-5 hide control-default">请选择你的出生日期</label>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label" for="home">收货地址:</label>
+                        <div class="col-md-5">
+                            <input id="home" type="url" class="form-control" placeholder="请输入个人收货地址">
+                        </div>
+                        <label id="homeTip" class="col-md-5 hide control-default">请准确输入你的收货地址</label>
+                    </div>
+                    <div class="form-group ">
+                        <div class="col-md-5 ">
+                            <a  class="btn btn-success btn-block">注册</a>
+                        </div>
+                    </div>
+                </form>
+        </div>
+    </div>
+</div>
+<footer id="footer"></footer>
+<script src="js/jquery.js"></script>
+<script>
+    $('#header').load('php/header.php');
+    $('#footer').load('php/footer.php');
+    //封装一个专门用于表单2.0的验证的函数
+    //将不同情况下不同的内容作为函数的参数
+    function validityForm(elemid,elemText){
+        var elem=document.getElementById(elemid);
+        var elemTip=document.getElementById(elemid+"Tip");
+        var msg=document.getElementById(elemid+"Tip").innerHTML;
+        elem.onfocus=function(){
+            elemTip.className="col-md-5 show control-default";
+            elemTip.innerHTML=msg;
+        }
+        elem.onblur=function(){
+            if(elem.validity.valid){
+                elemTip.className="col-md-5 show control-success";
+                elemTip.innerHTML=elemText+"输入正确";
+            }
+            if(elem.required){
+                if(elem.validity.valueMissing){
+                    elemTip.className="col-md-5 show control-error";
+                    elemTip.innerHTML=elemText+"输入不能为空";
+                }
+            }
+            if(elem.pattern){
+                if(elem.validity.patternMismatch) {
+                    elemTip.className = "col-md-5 show control-error";
+                    elemTip.innerHTML = msg;
+                }
+            }
+        }　
+    }
+    validityForm("login-username","登录名");
+    validityForm("login-password","密码");
+    validityForm("username","用户名");
+    validityForm("password","密码");
+    validityForm("birth","生日");
+    validityForm("home","地址");
+    $('#close').click(function(e){
+        e.preventDefault();
+        $('#login-box').css('display','none');
+    });
+    $('#main-tab li').click(function (e) {
+        var target=e.target;
+        e.preventDefault();
+        if(target.nodeName=="A"){
+            $($(target).attr('href')).css('display','block');
+            target=target.parentNode;
+            $($(target).siblings().children().attr('href')).css('display','none');
+
+        }
+        $(target).addClass('current').siblings('.current').removeClass();
+        target=target.firstChild;
+    })
+
+</script>
+</body>
+</html>

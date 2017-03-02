@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>YummyCake定制属于您的专属蛋糕</title>
+    <link rel="stylesheet" type="text/css" href="css/common.css">
+    <link rel="stylesheet" type="text/css" href="css/pay.css">
+</head>
+<body>
+
+<header id="header"></header>
+<section id="section">
+    <div id="loc">
+        <a href="index.html">首页</a>
+        >
+        <a href="products.html">蛋糕目录</a>
+        ><a href="deteil.html">蛋糕详情页</a>
+        >立即购买
+    </div>
+    <div class="pay-title">
+
+    </div>
+    <form action="#">
+        <div  class="pay-body">
+            <p class="f18 b p">订单详情</p>
+            <table cellspacing="0" cellpadding="0" border="0">
+                <thead>
+                    <tr>
+                        <td colspan="2"width="26">商品详情</td>
+                        <td width="17%">属性</td>
+                        <td width="12%">单价（RMB）</td>
+                        <td width="15%">数量</td>
+                        <td width="10%">生日牌</td>
+                        <td width="12%">小计</td>
+                        <td width="8%">删除</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><a href="#"><img src="images/xin1.jpg" style="width: 100px;height: 100px;"></a></td>
+                        <td><a href="#">STARRY SKY星空</a></td>
+                        <td>2.0磅 / 10份 标配餐具</td>
+                        <td>￥<span class="pri">308</span>.00 元</td>
+                        <td><div class="rt-sum"><a href="#" class="cut">-</a><input type="text" value="1" class="num1" disabled><a href="#" class="add">+</a></div></td>
+                        <td><p class="birthTip">无</p><br>
+                            <a href="#" class="active birth">选择生日牌</a></td>
+                        <td>￥<span class="price tol1 tol">308.00 </span> 元</td>
+                        <td><a href="#">删除</a></td>
+                    </tr>
+                    <tr id="isCandle" >
+                        <td><a href="#"><img src="images/xin1.jpg" style="width: 100px;height: 100px;"></a></td>
+                        <td><a href="#">蓝色长条蜡烛</a></td>
+                        <td>包</td>
+                        <td>￥<span class="pri">2</span>.00 元</td>
+                        <td><div class="rt-sum"><a href="#" class="cut">-</a><input type="text" value="0" id="num2" disabled><a href="#" class="add">+</a></div></td>
+                        <td></td>
+                        <td>￥<span class="price">0.00 </span>元</td>
+                        <td><a href="#">删除</a></td>
+                    </tr>
+                    <tr id="isAddCook">
+                        <td><a href="#"><img src="images/xin1.jpg" style="width: 100px;height: 100px;"></a></td>
+                        <td><a href="#">10人份餐具</a></td>
+                        <td>份</td>
+                        <td>￥<span class="pri">5</span> .00元</td>
+                        <td><div class="rt-sum"><a href="#" class="cut">-</a><input type="text" value="0" id="num3" disabled><a href="#" class="add">+</a></div></td>
+                        <td></td>
+                        <td>￥<span class="price">0.00</span> 元</td>
+                        <td><a href="#">删除</a></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="pay-other">
+                <ul>
+                    <li><input id="candle" type="checkbox" value="cd" name="candle"> 需要蜡烛</li>
+                    <li><input id="addCook" type="checkbox" value="ac" name="addCook">  增加餐具套餐</li>
+                    <li><input id="usermsg" type="checkbox" value="um" name="usermsg">留言说明<br>
+                    <textarea name="umsg" id="umsg" cols="50" rows="5"></textarea></li>
+                </ul>
+            </div>
+            <p class="f18 b p">送货信息</p>
+            <div class="deliver">
+                <ul>
+                    <li class="sub">联系方式：<input type="text" name="" placeholder="请输入正确的联系方式" maxlength="11"></li>
+                    <li>配送地址：<a href="#" class="active pay-location ml10" >添加配送地址</a></li>
+                    <li>配送方式：</li>
+                    <li class="sub">配送时间：<input type="text"  id="J-xl" placeholder="默认只能接受下单后第二天配送" name="" value="">
+                        <select name="" id="start">
+                            <option value="">10:00</option>
+                            <option value="">11:00</option>
+                            <option value="">12:00</option>
+                            <option value="">13:00</option>
+                            <option value="">14:00</option>
+                            <option value="">15:00</option>
+                            <option value="">16:00</option>
+                            <option value="">17:00</option>
+                            <option value="">18:00</option>
+                            <option value="">19:00</option>
+                        </select>
+                        <select name="" id="end">
+                            <option value="">11:00</option>
+                            <option value="">12:00</option>
+                            <option value="">13:00</option>
+                            <option value="">14:00</option>
+                            <option value="">15:00</option>
+                            <option value="">16:00</option>
+                            <option value="">17:00</option>
+                            <option value="">18:00</option>
+                            <option value="">19:00</option>
+                            <option value="">20:00</option>
+                        </select>
+                    </li>
+                    <li><input id="kai" type="checkbox" value="kf" name="">开发票<br></li>
+                </ul>
+            </div>
+            <p class="f18 b p">付款方式</p>
+            <div class="pay_way bg">
+                <input type="radio" name="pay" value="" checked>支付宝
+                <input type="radio" name="pay" value="" class="idcard">银联
+                <input type="radio" name="pay" value="">货到付款（现金）
+                <input type="radio" name="pay" value="">会员资金账户<br>
+                <p class="sub hide" id="idshow"><label for="idcard">银行卡号：</label><input type="text" id="idcard" placeholder="请输入正确的银行帐号"></p>
+                <input id="dai" type="checkbox" value="kf" name="">使用代金券
+            </div>
+
+            <div class="total">
+                <p class="f20 b">商品总计：￥ <span id="total1">0.00</span>RMB</p>
+            </div>
+            <p class="rt-buy over p"><a href="payCart.html" class="fl" id="back">返回购物车</a> <a href="order.html" class="rt" id="submit">提交订单</a></p>
+        </div>
+        <!--模态框-->
+        <div id="window-city">
+            <div id="city-box">
+                <div class="bg">
+                    <!--<p>请选择生日牌类型</p>-->
+                    <!--<p><input type="radio" name="sr" value="中文生日快乐" checked>中文生日快乐</p>-->
+                    <!--<p><input type="radio" name="sr" value="英文生日快乐">英文生日快乐</p>-->
+                    <!--<p><input type="radio" name="sr" value="" class="inself">自定义-->
+                        <!--<input type="text" placeholder="最多10个字" class="text hide" maxlength="10"></p>-->
+                    <!--<p class="sub"><a href="#" type="button" class="confirm">确定</a><a href="#" type="button" class="cancel">取消</a></p>-->
+                </div>
+            </div>
+        </div>
+
+    </form>
+</section>
+
+<footer id="footer">
+</footer>
+<script src="js/jquery.js"></script>
+<script src="js/laydate.dev.js"></script>
+<script src="js/common.js"></script>
+<script src="js/pay.js"></script>
+</body>
+</html>

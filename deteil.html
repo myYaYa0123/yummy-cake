@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>YummyCake定制属于您的专属蛋糕</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/detail.css">
+</head>
+<body>
+<header id="header"></header>
+<section id="section">
+    <div id="loc">
+        <a href="index.html">首页</a>
+        >
+        <a href="products.html">蛋糕目录</a>
+        ><span class="index"></span>
+    </div>
+    <div id="product-title">
+        <div id="product-title-lf">
+            <img  class="rt-img">
+        </div>
+        <div id="product-title-rt">
+            <div class="rt-title"><!--STARRY SKY星空--></div>
+            <div class="rt-price">价格：<!--<span class="price">￥160RMB</span>--></div>
+            <div class="rt-size">
+                <a href="#" class="active">1.0磅：约12x12(cm)</a>
+                <a href="#">2.0磅：约16x16(cm)</a>
+            </div>
+            <div class="rt-sum">数量：<a href="#" class="cut">-</a><input type="text" value="1"><a href="#" class="add">+</a></div>
+            <div class="rt-buy">
+                <a href="#" class="addCar" data-id="" id="D_addCar">加入购物车</a>
+                <a href="#" class="now-pay">立即购买</a>
+            </div>
+            <div class="rt-info">
+                <!--童年的时光一纵即逝，和宝贝一起开启创意之旅，跨越彩虹吧<br><br>-->
+                <!--* 水果受季节影响，种类有变化，但总克重不变。 当季搭配水果为芒果-->
+            </div>
+        </div>
+    </div>
+    <div id="product-info">
+        <div class="title">商品详情</div>
+        <div class="proinfo">
+            <ul>
+                <li>品牌：Yummy cake</li>
+                <li>口味：<span class="psmell"></span><!--香草奶油--></li>
+                <li>适合节日：各类节日，生日</li>
+                <li>蛋糕分类：<span class="psort"></span></li>
+                <li>甜度：★★★☆☆<span class=".sugar"></span></li>
+                <li>适合人群：各类人群</li>
+                <li>保鲜条件：0－4℃保藏12小时，5℃最佳食用</li>
+            </ul>
+            <div class="material">
+                <p>优质原材料：</p>
+                <p class="pmaterial">
+                </p>
+            </div>
+        </div>
+        <div class="title">常规小提示（尺寸以单款介绍为准）: </div>
+        <div class="size-rule">
+            <ol>
+                <li>1、免费送货上门，送货范围可在网站底页“配送说明”栏目下查询所在城市的配送区域； </li>
+                <li>2、蛋糕收到后如不立即食用请及时冷藏，（收货后2-3小时内食用最佳）。</li>
+                <li>3、如对上述食材有过敏经历者，请选择其它款蛋糕。 </li>
+                <li>4、蛋糕规格及免费配送餐具参考 ：
+                    <ul class="rule">
+                        <li><p>1.0磅：</p><p>约12 X 12（cm） </p><p>适合3-4人食用</p><p>免费配送5套餐具</p></li>
+                        <li><p>2.0磅：</p><p>约16 X 16（cm）</p><p>适合7-8人食用</p><p>免费配送10套餐具</p></li>
+                        <li><p>3.0磅：</p><p>约22 X 22（cm）</p><p>适合11-12人食用</p><p>免费配送15套餐具</p></li>
+                        <li><p>5.0磅：</p><p>约28 X 28 （cm）</p><p>适合15-20人食用</p><p>免费配送20套餐具</p></li>
+                    </ul>
+                </li>
+            </ol>
+            <p class="notice">***订购5磅及5磅以上规格的蛋糕，请提前24小时订购，并电话与客服人员联系和确认，订购电话：400- 616- 2121</p>
+        </div>
+        <div class="bg-img">
+            <img src="images/deteil1.gif" >
+            <img src="images/deteil.gif" >
+        </div>
+        <div class="comment">
+
+        </div>
+    </div>
+</section>
+<footer id="footer"></footer>
+
+<script src="js/jquery.js"></script>
+<script src="js/jquery.fly.min.js"></script>
+<script src="js/requestAnimationFrame.js"></script>
+<script src="js/common.js"></script>
+<script>
+    $(function(){
+        init();
+//        初始化页面
+        var str = location.href; //取得整个地址栏
+        var num = str.indexOf("?");
+        str = str.substr(num+1);
+        $.ajax({
+            type:"POST",
+            url:"php/deteil_get.php",
+            data:str,
+            success:function (response) {
+                if(response[0].sort==06 ||response[0].sort==07){
+                    $('.rt-size').html('<a href="#" class="active">1.0磅</a>');
+                }
+                $('.rt-img').attr('src',response[0].pimg);
+                $('.rt-title').text(response[0].ptitle);
+                $('.rt-info').text(response[0].pname);
+                $('.rt-price').text("价格：¥"+response[0].price+"RMB");
+                $('.psmell').text(response[0].psmell);
+                $('.psort').text(response[0].psort);
+                $('.pmaterial').text(response[0].pmaterial);
+                $('.addCar').html(`<a href="#" class="addCar" data-id="${response[0].pid}">加入购物车</a>`);
+                $('.index').html(response[0].ptitle);
+                //        修改商品详情信息（数据库还需搭建）
+            }
+        });
+
+
+//尺寸
+        $('.rt-size a').click(function (e) {
+            e.preventDefault();
+            $(this).addClass('active').siblings('a').removeClass('active');
+        });
+
+//        点击加入购物车
+
+
+//        点击立即购买
+        $('.now-pay').click(function (e) {
+            e.preventDefault();
+            window.location.href="pay.html?"+str;
+        });
+
+    });
+</script>
+</body>
+</html>

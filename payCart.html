@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>YummyCake定制属于您的专属蛋糕</title>
+    <link rel="stylesheet" type="text/css" href="css/common.css">
+    <link rel="stylesheet" type="text/css" href="css/pay.css">
+
+</head>
+<body>
+
+<header id="header"></header>
+<section id="section">
+    <div id="loc">
+        <a href="index.html">首页</a>
+        >
+        <a href="products.html">蛋糕目录</a>
+        ><a href="deteil.html">蛋糕详情页</a>
+        >购物车
+    </div>
+    <div class="pay-title">
+
+    </div>
+    <form action="#">
+        <div  class="pay-body">
+            <p class="f18 b p">订单详情</p>
+            <table cellspacing="0" cellpadding="0" border="0">
+                <thead>
+                <tr>
+                    <td colspan="2"width="26">商品详情</td>
+                    <td width="17%">属性</td>
+                    <td width="12%">单价（RMB）</td>
+                    <td width="15%">数量</td>
+                    <td width="10%">生日牌</td>
+                    <td width="12%">小计</td>
+                    <td width="8%">删除</td>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td><a href="#"><img src="images/xin1.jpg" style="width: 100px;height: 100px;"></a></td>
+                    <td><a href="#">STARRY SKY星空</a></td>
+                    <td>2.0磅 / 10份 标配餐具</td>
+                    <td>￥<span class="pri">308</span>.00 元</td>
+                    <td><div class="rt-sum"><a href="#" class="cut">-</a><input type="text" value="1" class="num1" disabled><a href="#" class="add">+</a></div></td>
+                    <td><p class="birthTip">无</p><br>
+                        <a href="#" class="active birth">选择生日牌</a></td>
+                    <td>￥<span class="price tol1">308.00 </span> 元</td>
+                    <td><a href="#">删除</a></td>
+                </tr>
+                </tbody>
+            </table>
+            <div class="total">
+                <p class="f20 b">商品总计：￥ <span id="total1">0.00</span>RMB</p>
+            </div>
+            <p class="rt-buy over p"><a href="products.html" class="fl">继续选购</a> <a href="pay.html" class="rt" id="submit">立即购买</a></p>
+        </div>
+        <!--模态框-->
+        <div id="window-city">
+            <div id="city-box">
+                <div class="bg">
+                </div>
+            </div>
+        </div>
+
+    </form>
+</section>
+
+<footer id="footer">
+</footer>
+<script src="js/jquery.js"></script>
+<script src="js/common.js"></script>
+<script>
+    $(function () {
+//       如果未登陆  弹出登陆注册模态框
+
+//        删除
+        $('table tbody tr td:last-child a').click(function (e) {
+            e.preventDefault();
+            if (confirm("您确定要讲这样商品删除吗")) {
+                $(this).parent().parent().remove();
+                //            当购物车中没有商品时
+                if ($('table tbody tr').length < 3) {
+                    window.location.href = "pay_null.html";
+                }
+            }
+        });
+
+
+        //    加载页面
+
+//        $.ajax({
+//            type: "POST",
+//            url: "",
+//            data: "",
+//            success: function (response) {
+//                window.location.href = response.sucUrl;
+//            },
+//            error: function (response) {
+//                window.location.href = response.errUrl;
+//            }
+//        });
+    })
+</script>
+</body>
+</html>

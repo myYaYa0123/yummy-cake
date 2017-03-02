@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>YummyCake定制属于您的专属蛋糕</title>
+    <link rel="stylesheet" type="text/css" href="css/common.css">
+    <!--<link rel="stylesheet" type="text/css" href="css/pay.css">-->
+    <style>
+        #section{
+            width: 1100px;
+            margin: 10px auto;
+            overflow: hidden;
+        }
+        .pay_null{
+            padding: 100px 0 ;
+            min-height: 300px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<header id="header"></header>
+<section id="section">
+    <div class="pay_null">
+        <p class="f20 b p">您的购物车还是空的，赶紧种草吧！</p>
+        <p>马上行动 <a href="products.html" class="active">全部商品</a> 挑选您最喜爱的商品</p>
+    </div>
+</section>
+<footer id="footer">
+</footer>
+<script src="js/jquery.js"></script>
+<script>
+    $(function () {
+        var loginName=sessionStorage.getItem("loginName");
+        $('#header').load('php/header.php',function () {
+            if(loginName){
+                $('#header #login-btn').html('欢迎回来：'+loginName).next().remove();
+            }
+        });
+        $('#footer').load('php/footer.php');
+//       如果未登陆  弹出登陆注册模态框
+
+
+    });
+</script>
+</body>
+</html>

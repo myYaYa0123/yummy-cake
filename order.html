@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>YummyCake定制属于您的专属蛋糕</title>
+    <link rel="stylesheet" type="text/css" href="css/common.css">
+    <!--<link rel="stylesheet" type="text/css" href="css/pay.css">-->
+    <style>
+        #section{
+            width: 1100px;
+            margin: 10px auto;
+            overflow: hidden;
+        }
+        .pay-details{
+            background-color: #f7f7f7;
+            padding: 10px;
+            margin: 10px 0;
+        }
+        .pay-details p{
+            padding:3px 5px;
+        }
+        .pay-details p span,.pay-details p a{
+            margin: 0 10px;
+        }
+        .title{
+            font-weight: bold;
+            font-size: 18px;
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+
+<header id="header"></header>
+<section id="section">
+    <div id="loc">
+        <a href="index.html">首页</a>
+        > <a href="centerOrder.html">我的订单</a>
+        >订单详情
+    </div>
+    <div class="pay-details">
+        <h3 class="title">订单详情</h3>
+        <p>蛋糕名称：<span class="name"></span></p>
+        <p>蛋糕详情：<img src="" alt=""></p>
+        <p>蛋糕价格：<span class="price"></span></p>
+        <p>其它配件：<span class=""></span></p>
+        <p>下单时间：<span class=""></span></p>
+    </div>
+    <div class="pay-details">
+        <h3 class="title">配送信息</h3>
+        <p>订购人姓名：<span class="uname"></span></p>
+        <p>联系方式：<img src="" alt=""></p>
+        <p>配送地址：<span class=""></span></p>
+        <p>配送方式：<span class=""></span></p>
+        <p>配送时间：<span class=""></span></p>
+    </div>
+    <div class="pay-details">
+        <h3 class="title">支付详情</h3>
+        <p>支付方式：<span class="name">支付宝</span><a href="#" class="active">更换支付方式</a></p>
+        <p>支付情况：<a href="#" class="err">未支付</a><span class="f12 alert"><b>30</b>分钟内未支付，将被取消订单</span></p>
+    </div>
+    <div style="margin: 10px 0" class="over pay-details">
+        <a type="button" id="N_pay" class="btn btn-warning rt" style="width: 100px;">立即支付</a>
+        <a type="button" id="N_cancel" class="btn rt" href="#" style="width: 100px;">取消订单</a>
+    </div>
+    <!--模态框-->
+    <div id="window-city">
+        <div id="city-box">
+            <div class="bg">
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer id="footer">
+</footer>
+<script src="js/jquery.js"></script>
+<script src="js/common.js"></script>
+<script>
+    $('#N_cancel').click(function (e) {
+        e.preventDefault();
+        $('#window-city').css('display','block');
+        $('#window-city #city-box .bg').html(
+                `<div class="over" ><p class="f18 p4">您真的忍心取消订单吗？</p>
+                <p><a href="#" id="C_confirm" class="btn rt btn-warning" style="width: 100px;">确定</a><a href="#" id="C_cancel" class="btn rt" style="width: 100px;">取消</a></p></div>
+`);
+    });
+
+    $('.bg').on('click','#C_cancel',function (e) {
+        e.preventDefault();
+        $('#window-city').css('display','none');
+    });
+    $('.bg').on('click','#C_confirm',function (e) {
+        e.preventDefault();
+        $('#window-city').css('display','none');
+        window.location.href = "pay_null.html";
+    });
+</script>
+</body>
+</html>

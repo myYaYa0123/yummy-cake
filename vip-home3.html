@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>YummyCake定制属于您的专属蛋糕</title>
+    <link type="text/css" href="css/common.css" rel="stylesheet" />
+    <link type="text/css" href="css/style.css" rel="stylesheet" />
+    <style>
+        #section{
+            width: 1100px;
+            margin: 0 auto;
+        }
+        #board {
+            background-color: #9d9d9d;
+            border: 1px solid #9d9d9d;
+            margin-top: 30px;
+            padding-left: 10px;
+            padding-top: 10px;
+            position: relative;
+        }
+        #canvas {
+            background-color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+<a name="top1"></a>
+<!--头部nav和logo-->
+<header id="header">
+    <!--logo顶部内容-->
+</header>
+<!--section-->
+<section id="section">
+    <div id="loc">
+        <a href="index.html">首页</a>
+        >VIP会员专享
+    </div>
+    <!--中间nav-->
+    <nav id="nav" class="navbar navbar-default mt20">
+        <div class="navbar-header" style="color: #6B3908;">
+            <a class="navbar-brand" href="#">VIP会员专享</a><br/>
+            <p>在这里你可以亲手定制你想要的蛋糕样式，我们会根据你的DIY内容，尽量绘制出你想要的样子！</p>
+        </div>
+    </nav>
+    <div id="tools" class="container-fluid">
+        <fieldset id="tool" class="col-md-3">
+            <legend>工具</legend>
+            <button id="pencil" class="btn btn-default col-md-3" style="background-color:#9d9d9d;color:#ffffff">画笔</button>
+            <button id="word" class="btn btn-default col-md-3">文字</button>
+            <button id="eraser" class="btn btn-default col-md-3">橡皮擦</button>
+            <button id="trash" class="btn btn-default col-md-3">清除</button>
+        </fieldset>
+        <fieldset id="graphic" class="col-md-3">
+            <legend>图形</legend>
+            <button id="line" class="btn btn-default col-md-3">直线</button>
+            <button id="rect" class="btn btn-default col-md-3">矩形</button>
+            <button id="circle" class="btn btn-default col-md-3">圆形</button>
+            <button id="triangle" class="btn btn-default col-md-3">三角</button>
+        </fieldset>
+        <fieldset id="color" class="col-md-4">
+            <legend>颜色</legend>
+            <button id="white" class="btn btn-default col-md-3">白色</button>
+            <button id="black" class="btn btn-default col-md-3">黑色</button>
+            <button id="red" class="btn btn-default col-md-3">红色</button>
+            <button id="yellow" class="btn btn-default col-md-3">黄色</button>
+            <button id="blue" class="btn btn-default col-md-3">蓝色</button>
+            <button id="green" class="btn btn-default col-md-3">绿色</button>
+            <button id="orange" class="btn btn-default col-md-3">橙色</button>
+            <button id="purple" class="btn btn-default col-md-3">紫色</button>
+        </fieldset>
+    </div>
+    <div id="board">
+        <canvas id="canvas" width="1080px" height="400px">你的浏览器不支持本画图功能，请更换其它浏览器</canvas>
+        <form action="">
+            <input type="hidden">
+            <div style="margin: 10px 0" class="over">
+                <a type="button" class="btn btn-warning rt" style="width: 100px;">保存</a>
+                <a type="button" class="btn rt" href="vip-home3.html" style="width: 100px;">取消</a>
+             </div>
+        </form>
+    </div>
+</section>
+<!--底部其它信息-->
+<footer id="footer">
+
+</footer>
+
+<script src="js/jquery.js"></script>
+<script src="js/common.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/vip.js"></script>
+</body>
+</html>
